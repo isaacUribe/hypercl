@@ -4,4 +4,23 @@
     <h4>Vision</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio aspernatur iure ratione nulla repudiandae, id distinctio ducimus perspiciatis similique neque commodi, quas dolorum! Quaerat exercitationem quasi corrupti ducimus maxime.</p>
 </section>
+<app-acercade></app-acercade>
+<section class="banner2"></section>
+<section>
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            <div class="col" *ngFor="let carga of cargamento">
+                <div class="card h-100 shadow p-4">
+                    <h1>Carga: {{carga.nombre}}</h1>
+                    <h3>Tipo de carga:{{carga.tipoCarga}}</h3>
+                    <h5>Peso Carga:{{carga.pesoCarga}} </h5>
+                    <h6>Alto: {{carga.alto}}</h6>
+                    <h6>Largo: {{carga.largo}}</h6>
+                    <h6>Ancho: {{carga.ancho}}</h6>
+                    <h6><strong>Zona: {{carga.zona.nombre}}</strong></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 

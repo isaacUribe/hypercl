@@ -8,6 +8,13 @@
     z-index: 1;
 
 }
+.banner2{
+    background-image: url("../../assets/img/banner2.avif");
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 25%;
+}
 .banner::after{
     content: "";
     position: absolute;
