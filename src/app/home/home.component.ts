@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Carga } from '../interfaces/Carga';
 import { compileNgModule } from '@angular/compiler';
+import { CargaService } from '../services/carga.service';
 
 @Component({
   selector: 'app-home',
@@ -10,22 +11,12 @@ import { compileNgModule } from '@angular/compiler';
 export class HomeComponent {
   public cargamento:Carga[]=[]
 
-  public carga1:Carga={
-    id:1,
-    nombre:"Nevera",
-    tipoCarga:"Delicado",
-    pesoCarga:50,
-    alto:175,
-    largo:50,
-    ancho:50,
-    zona:{
-      id:1,
-      nombre:"zonaA",
-      capacidad:1
-    }
-  }
-  constructor(){
-    this.cargamento.push(this.carga1)
-    console.log(this.cargamento)
+
+  constructor(public peticion:CargaService){
+    this.peticion.buscarCarga().subscribe((respuesta)=>{
+      console.log(respuesta)
+      this.cargamento=respuesta
+    })
+    
   }
 }

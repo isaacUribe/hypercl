@@ -11,16 +11,18 @@
         <div class="row row-cols-1 row-cols-md-2 g-3">
             <div class="col" *ngFor="let carga of cargamento">
                 <div class="card h-100 shadow p-4">
-                    <h1>Carga: {{carga.nombre}}</h1>
-                    <h3>Tipo de carga:{{carga.tipoCarga}}</h3>
-                    <h5>Peso Carga:{{carga.pesoCarga}} </h5>
-                    <h6>Alto: {{carga.alto}}</h6>
-                    <h6>Largo: {{carga.largo}}</h6>
-                    <h6>Ancho: {{carga.ancho}}</h6>
-                    <h6><strong>Zona: {{carga.zona.nombre}}</strong></h6>
+                    <h2>Nombre: {{carga.nombre}}</h2>
+                    <p><strong>Descripcion: </strong>{{carga.descripcion}}</p>
+                    <p><strong>Fecha Entrega: </strong>{{carga.fecha| date:'fullDate'}}</p>
+                    <p><strong>Motivo Devolucion: </strong>{{carga.motivoDevolucion}}</p>
+                    <p><strong>Volumen Ocupa: </strong>{{carga.volumenOcupa}}</p>
+                    <!-- <p><strong>Zona: </strong>{{carga.zona.nombre}}</p> -->
                 </div>
             </div>
         </div>
     </div>
+</section>
+<section>
+    <app-formulario></app-formulario>
 </section>
 
