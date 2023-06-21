@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms'
+import { CargaService } from '../services/carga.service';
 
 @Component({
   selector: 'app-formulario',
@@ -8,7 +9,10 @@ import {FormGroup, FormBuilder} from '@angular/forms'
 })
 export class FormularioComponent {
   public formulario:FormGroup
-  public constructor(public fabricaFormulario:FormBuilder){
+  public constructor(
+    public fabricaFormulario:FormBuilder,
+    public servicioCarga:CargaService
+    ){
     this.formulario=this.inicializarFormulario()
   }
   public inicializarFormulario():FormGroup{
@@ -22,7 +26,12 @@ export class FormularioComponent {
     })
   }
   public capturarDatos():void{
-
+    let datosCarga = this.formulario.value
+    this.servicioCarga.registrarCarga(datosCarga)
+    .subscribe(respuesta=>{
+      console.log(respuesta)
+      window.location.reload()
+    })
   }
 
 }
