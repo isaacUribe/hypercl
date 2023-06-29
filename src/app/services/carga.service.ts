@@ -8,11 +8,13 @@ import {Observable} from 'rxjs'
 export class CargaService {
 
   constructor(public servicio:HttpClient) { }
-  public registrarCarga(){
-
+  public registrarCarga(datosCarga:any):Observable<any>{
+    let url = "http://localhost:8080/api/v1/mercancia"
+    return this.servicio.post(url, datosCarga)
   }
   public buscarCarga():Observable<any>{
     let url = "http://localhost:8080/api/v1/mercancia"
     return this.servicio.get(url)
   }
+
 }

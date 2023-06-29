@@ -6,23 +6,23 @@
             <form [formGroup]="formulario">
                 <div class="mb-3">
                     <label class="form-label">Nombre</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" formControlName="nombre">
                   </div>
                 <div class="mb-3">
                     <label class="form-label">Descripcion</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" formControlName="descripcion">
                   </div>
                 <div class="mb-3">
                     <label class="form-label">Fecha Entrega</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" formControlName="fechaEntrega">
                   </div>
                 <div class="mb-3">
                     <label class="form-label">Motivo Devolucion</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" formControlName="motivoDevolucion">
                   </div>
                 <div class="mb-3">
                     <label class="form-label">Volumen Ocupa</label>
-                    <input type="number" class="form-control">
+                    <input type="number" class="form-control" formControlName="volumenOcupa">
                   </div>
                 <!-- <div class="mb-3">
                     <label class="form-label">Zona</label>
